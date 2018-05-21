@@ -1,0 +1,4 @@
+LD_LIBRARY_PATH=/usr/local/lib64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+
+g++ file.cpp -O3 -finline-functions -DNDEBUG ff_watermark.cpp -D cimg_display=0 -I./lib -lm -lpthread -std=gnu++11 -o file
