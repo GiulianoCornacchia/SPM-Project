@@ -16,6 +16,7 @@
 
 #define EOS NULL
 
+using img_t = cimg_library::CImg<int>;
 
 template <typename T>
 class queue{
@@ -96,7 +97,7 @@ class queue{
 	  }
 };
 
-void apply_watermark(bool avg, cimg_library::CImg<int> &img, int c, int r){
+void apply_watermark(bool avg, img_t &img, int c, int r){
 	if (avg){
 		/*
 		* grayscale rgb(R + G + B + 255 / 4) 
@@ -113,8 +114,8 @@ void apply_watermark(bool avg, cimg_library::CImg<int> &img, int c, int r){
 
 void process_image(
 	const char* file_name,
- 	cimg_library::CImg<int> img, 
- 	cimg_library::CImg<int> watermark,
+ 	img_t img, 
+ 	img_t watermark,
  	bool average)
 {
   	int width = img.width();
@@ -128,13 +129,36 @@ void process_image(
 };
 
 void pipe_process_image(
-	cimg_library::CImg<int> &img, 
- 	cimg_library::CImg<int> watermark,
+	img_t &img, 
+ 	img_t watermark,
  	bool average){
 
-	int width = img.width();
-    int height = img.height();
+	int width = img.width(),
+    	height = img.height();
+
     for (int r = 0; r < height; r++)
+        for (int c = 0; c < width; c++)
+        	if(watermark(c, r) < 50)
+        		apply_watermark(average, img, c, r);
+}
+
+void pipe_process_image(
+	img_t &img, 
+ 	img_t watermark,
+ 	bool average,
+ 	bool is_stage_2){
+
+	int width = img.width(),
+    	height = img.height(),
+    	lim_y = height/2,
+    	start_y = 0;
+
+    if (!is_stage_2){
+    	start_y =  lim_y;
+    	lim_y = height;
+    }
+
+    for (int r = start_y; r < lim_y; r++)
         for (int c = 0; c < width; c++)
         	if(watermark(c, r) < 50)
         		apply_watermark(average, img, c, r);
