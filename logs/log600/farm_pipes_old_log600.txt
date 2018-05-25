@@ -1,0 +1,35 @@
+Elapsed time 74288 msecs on 600 imgs
+Elapsed time 74383 msecs on 600 imgs
+Elapsed time 74206 msecs on 600 imgs
+Elapsed time 75044 msecs on 600 imgs
+Elapsed time 74328 msecs on 600 imgs
+farm_pipes
+Time: 38059 nImgs: 600 par_deg: 2
+farm_pipes
+Time: 37982 nImgs: 600 par_deg: 2
+farm_pipes
+Time: 37935 nImgs: 600 par_deg: 2
+farm_pipes
+Time: 38135 nImgs: 600 par_deg: 2
+farm_pipes
+Time: 37899 nImgs: 600 par_deg: 2
+Time: 22518 nImgs: 600 par_deg: 4
+Time: 22332 nImgs: 600 par_deg: 4
+Time: 22094 nImgs: 600 par_deg: 4
+Time: 22215 nImgs: 600 par_deg: 4
+Time: 22593 nImgs: 600 par_deg: 4
+Time: 33594 nImgs: 600 par_deg: 8
+Time: 33753 nImgs: 600 par_deg: 8
+Time: 33579 nImgs: 600 par_deg: 8
+Time: 34739 nImgs: 600 par_deg: 8
+Time: 33381 nImgs: 600 par_deg: 8
+Time: 62183 nImgs: 600 par_deg: 16
+Time: 60965 nImgs: 600 par_deg: 16
+Time: 60425 nImgs: 600 par_deg: 16
+Time: 61940 nImgs: 600 par_deg: 16
+Time: 62156 nImgs: 600 par_deg: 16
+Time: 111763 nImgs: 600 par_deg: 32
+Time: 111655 nImgs: 600 par_deg: 32
+Time: 109490 nImgs: 600 par_deg: 32
+Time: 110572 nImgs: 600 par_deg: 32
+Time: 113182 nImgs: 600 par_deg: 32
