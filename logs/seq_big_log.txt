@@ -1,0 +1,20 @@
+avgs[L, P, S]: 152.598, 23.98, 278.235
+Time: 286158 nImgs: 600 source: imgs/source_big/avgs: 152.598, 23.98, 278.235
+avgs[L, P, S]: 157.798, 24.9383, 290.3
+Time: 297536 nImgs: 600 source: imgs/source_big/avgs: 157.798, 24.9383, 290.3
+avgs[L, P, S]: 194.868, 28.005, 338.933
+Time: 355165 nImgs: 600 source: imgs/source_big/avgs: 194.868, 28.005, 338.933
+avgs[L, P, S]: 260.702, 32.965, 442.46
+Time: 465950 nImgs: 600 source: imgs/source_big/avgs: 260.702, 32.965, 442.46
+avgs[L, P, S]: 339.452, 39.09, 592.943
+Time: 612989 nImgs: 600 source: imgs/source_big/avgs: 339.452, 39.09, 592.943
+avgs[L, P, S]: 162.82, 22.7133, 278.798
+Time: 293827 nImgs: 600 source: imgs/source_big/avgs: 162.82, 22.7133, 278.798
+avgs[L, P, S]: 154.725, 23.58, 279.388
+Time: 290022 nImgs: 600 source: imgs/source_big/avgs: 154.725, 23.58, 279.388
+avgs[L, P, S]: 159.693, 23.14, 278.8
+Time: 292106 nImgs: 600 source: imgs/source_big/avgs: 159.693, 23.14, 278.8
+avgs[L, P, S]: 158.732, 23.07, 278.398
+Time: 289652 nImgs: 600 source: imgs/source_big/avgs: 158.732, 23.07, 278.398
+avgs[L, P, S]: 161.417, 22.7417, 278.057
+Time: 290991 nImgs: 600 source: imgs/source_big/avgs: 161.417, 22.7417, 278.057

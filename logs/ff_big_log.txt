@@ -1,0 +1,50 @@
+Time: 188699 nImgs: 600 par_deg: 1 source: imgs/source_big/
+Time: 187911 nImgs: 600 par_deg: 1 source: imgs/source_big/
+Time: 188575 nImgs: 600 par_deg: 1 source: imgs/source_big/
+Time: 190006 nImgs: 600 par_deg: 1 source: imgs/source_big/
+Time: 189997 nImgs: 600 par_deg: 1 source: imgs/source_big/
+Usage is: ./ff_watermark source_folder result_folder watermark_file par_deg avg
+*************************************************
+*** Images and watermark must have SAME SIZE. ***
+*************************************************
+Usage is: ./ff_watermark source_folder result_folder watermark_file par_deg avg
+*************************************************
+*** Images and watermark must have SAME SIZE. ***
+*************************************************
+Usage is: ./ff_watermark source_folder result_folder watermark_file par_deg avg
+*************************************************
+*** Images and watermark must have SAME SIZE. ***
+*************************************************
+Usage is: ./ff_watermark source_folder result_folder watermark_file par_deg avg
+*************************************************
+*** Images and watermark must have SAME SIZE. ***
+*************************************************
+Usage is: ./ff_watermark source_folder result_folder watermark_file par_deg avg
+*************************************************
+*** Images and watermark must have SAME SIZE. ***
+*************************************************
+Time: 94220.5 nImgs: 600 par_deg: 2 source: imgs/source_big/
+Time: 94225 nImgs: 600 par_deg: 2 source: imgs/source_big/
+Time: 93940.7 nImgs: 600 par_deg: 2 source: imgs/source_big/
+Time: 94249.7 nImgs: 600 par_deg: 2 source: imgs/source_big/
+Time: 94378.2 nImgs: 600 par_deg: 2 source: imgs/source_big/
+Time: 50398.3 nImgs: 600 par_deg: 4 source: imgs/source_big/
+Time: 51508.1 nImgs: 600 par_deg: 4 source: imgs/source_big/
+Time: 49636.5 nImgs: 600 par_deg: 4 source: imgs/source_big/
+Time: 49867.8 nImgs: 600 par_deg: 4 source: imgs/source_big/
+Time: 49132.4 nImgs: 600 par_deg: 4 source: imgs/source_big/
+Time: 29732.4 nImgs: 600 par_deg: 8 source: imgs/source_big/
+Time: 30247.8 nImgs: 600 par_deg: 8 source: imgs/source_big/
+Time: 29542.5 nImgs: 600 par_deg: 8 source: imgs/source_big/
+Time: 29635.4 nImgs: 600 par_deg: 8 source: imgs/source_big/
+Time: 29993.5 nImgs: 600 par_deg: 8 source: imgs/source_big/
+Time: 41698.8 nImgs: 600 par_deg: 16 source: imgs/source_big/
+Time: 42251.8 nImgs: 600 par_deg: 16 source: imgs/source_big/
+Time: 41732.3 nImgs: 600 par_deg: 16 source: imgs/source_big/
+Time: 42963.5 nImgs: 600 par_deg: 16 source: imgs/source_big/
+Time: 42355.1 nImgs: 600 par_deg: 16 source: imgs/source_big/
+Time: 63859.7 nImgs: 600 par_deg: 32 source: imgs/source_big/
+Time: 68494.2 nImgs: 600 par_deg: 32 source: imgs/source_big/
+Time: 67613.2 nImgs: 600 par_deg: 32 source: imgs/source_big/
+Time: 65731 nImgs: 600 par_deg: 32 source: imgs/source_big/
+Time: 64522.1 nImgs: 600 par_deg: 32 source: imgs/source_big/

@@ -1,31 +1,60 @@
-Time, nImgs, source
-19985	100	small
-19731	100	small
-19744	100	small
-19618	100	small
-19719	100	small
-39460	200	small
-39131	200	small
-39466	200	small
-38842	200	small
-39062	200	small
-58952	300	small
-58774	300	small
-58833	300	small
-58806	300	small
-59105	300	small
-78057	400	small
-79105	400	small
-77937	400	small
-79294	400	small
-78757	400	small
-99185	500	small
-98101	500	small
-97470	500	small
-97417	500	small
-97869	500	small
-118427	600	small
-118509	600	small
-118535	600	small
-118549	600	small
-118586	600	small
+watermark_seq
+Time: 19985 nImgs: 100 source: ./imgs/source/
+watermark_seq
+Time: 19731 nImgs: 100 source: ./imgs/source/
+watermark_seq
+Time: 19744 nImgs: 100 source: ./imgs/source/
+watermark_seq
+Time: 19618 nImgs: 100 source: ./imgs/source/
+watermark_seq
+Time: 19719 nImgs: 100 source: ./imgs/source/
+watermark_seq
+Time: 39460 nImgs: 200 source: ./imgs/source/
+watermark_seq
+Time: 39131 nImgs: 200 source: ./imgs/source/
+watermark_seq
+Time: 39466 nImgs: 200 source: ./imgs/source/
+watermark_seq
+Time: 38842 nImgs: 200 source: ./imgs/source/
+watermark_seq
+Time: 39062 nImgs: 200 source: ./imgs/source/
+watermark_seq
+Time: 58952 nImgs: 300 source: ./imgs/source/
+watermark_seq
+Time: 58774 nImgs: 300 source: ./imgs/source/
+watermark_seq
+Time: 58833 nImgs: 300 source: ./imgs/source/
+watermark_seq
+Time: 58806 nImgs: 300 source: ./imgs/source/
+watermark_seq
+Time: 59105 nImgs: 300 source: ./imgs/source/
+watermark_seq
+Time: 78057 nImgs: 400 source: ./imgs/source/
+watermark_seq
+Time: 79105 nImgs: 400 source: ./imgs/source/
+watermark_seq
+Time: 77937 nImgs: 400 source: ./imgs/source/
+watermark_seq
+Time: 79294 nImgs: 400 source: ./imgs/source/
+watermark_seq
+Time: 78757 nImgs: 400 source: ./imgs/source/
+watermark_seq
+Time: 99185 nImgs: 500 source: ./imgs/source/
+watermark_seq
+Time: 98101 nImgs: 500 source: ./imgs/source/
+watermark_seq
+Time: 97470 nImgs: 500 source: ./imgs/source/
+watermark_seq
+Time: 97417 nImgs: 500 source: ./imgs/source/
+watermark_seq
+Time: 97869 nImgs: 500 source: ./imgs/source/
+watermark_seq
+Time: 118427 nImgs: 600 source: ./imgs/source/
+watermark_seq
+Time: 118509 nImgs: 600 source: ./imgs/source/
+watermark_seq
+Time: 118535 nImgs: 600 source: ./imgs/source/
+watermark_seq
+Time: 118549 nImgs: 600 source: ./imgs/source/
+watermark_seq
+Time: 118586 nImgs: 600 source: ./imgs/source/
