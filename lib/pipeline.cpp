@@ -1,14 +1,43 @@
+/*
+*filename: pipeline.cpp
+**
+*** Author: Mario Leonardo Salinas
+*** Student Code: 502795
+*** Master Degree curriculum: Data and Knowledge - Science and Technologies
+**      
+*/
+
+/*
+*   C++ sequential implementation of a watermark application.
+*   Global variables and functions used are all defined in lib/util.cpp
+**/
 #include "util.cpp"
 
+/*
+*   Global variables:
+*       - watermark @ it's the variable that will contain the stamp image
+*       - path_in, path_out @ are respectively the source and result folder paths
+*		- task_queue @ it's a Single-Producer-Multiple-Consumers queue between the farm emitter and the pipelines.
+*       - stage2task_queue @ it's a vector of single-prod/cons queues between stage1 and 2, one for each pipeline
+*       - stage3task_queue @ the same as stage2 one but it's between stage 2 and 3
+*		- nImgs @ variable that, after the emitter has finished, will contain the inputsize
+*       - aVg @ boolean used to decide whether or not to apply a non-plain watermark [look at Figure 1a/b in the report for more details]
+**/
+
 cimg_library::CImg<int> watermark;
+std::string path_in, path_out;
 queue<std::string> task_queue; 
 std::vector<queue<std::pair<std::string, cimg_library::CImg<int> > > > stage2task_queue;
 std::vector<queue<std::pair<std::string, cimg_library::CImg<int> > > > stage3task_queue;
-std::string path_in;
-std::string path_out;
-bool aVg = false;
 int nImgs = 0;
+bool aVg = false;
 
+/*
+*   function that implements the farm emitter task. 
+*   It has to:
+*       1. retrieve the paths of the images and push them as pipeline tasks
+*       2. manage pipeline termination (sends EOS)
+**/
 void Source(int par_deg){
 	struct dirent *entry;
     DIR *dir = opendir(path_in.c_str());
@@ -17,7 +46,6 @@ void Source(int par_deg){
     	task_queue.push("EOS");
         return;
     }
-    //int it = 0;
     while ((entry = readdir(dir)) != NULL /*&& it < nImgs*/) {
     	//std::cout << entry->d_name << " read." << std::endl;
     	std::string s (entry->d_name);
@@ -25,7 +53,6 @@ void Source(int par_deg){
     		&& s.compare("..") != 0)
     	{
 			std::string file_name(s);
-			//std::string result_name(path_out+s);
 			task_queue.push(file_name);
 			nImgs++;
 	    }
@@ -46,7 +73,7 @@ void Source(int par_deg){
 *	endw
 *	
 *	push EOS in stage2_i_task_queue
-*/
+**/
 void stage1(int i){ 
 	//std::cout << "[in stage1_" <<  i << "] init with p_in = " <<
 	//		  path_in << std::endl;
@@ -70,20 +97,19 @@ void stage1(int i){
 *
 *	until EOS 
 *		1. reads from stage2_i_task_queue a 
-*		   parir<string filename, CImg<int> img>
+*		   pair<string filename, CImg<int> img>
 *		2. process the image				
 *		3. push the watermarked pair in stage3_i_task_queue
 *	endw
 *	
 *	push EOS in stage3_i_task_queue
-*/
+**/
 void stage2(int i){
 	//std::cout << "[in stage2_" <<  i << "] init." << std::endl;
 	while(true){
 		std::pair<std::string, cimg_library::CImg<int> > p = stage2task_queue[i].pop();
 		if(p.first.compare("EOS") == 0){
 		//	std::cout << "[in stage2_" <<  i << "] EOS recieved" << std::endl;
-		//	std::pair<std::string, cimg_library::CImg<int> > p1("EOS", cimg_library::CImg<int>());
 			stage3task_queue[i].push(p);
 			return;
 		}
@@ -97,7 +123,7 @@ void stage2(int i){
 *
 *	until EOS 
 *		1. reads from stage3_i_task_queue a 
-		   pair<string filename,CImg<int> img>
+*		   pair<string filename,CImg<int> img>
 *		2. writes the image on disk			
 *	endw
 *	
@@ -124,9 +150,15 @@ void stage3(int i){
 }
 
 /*
-*	stage123
+*	Function that implements the worker buisness logic in the master-worker architecture used in some tests.
 *
-**/
+*	until EOS 
+*		1. reads from task_queue a path
+*		2. loads the image
+*		3. process the image		
+*		4. writes the image on disk			
+*	endw
+*/
 void stage123(){
 	while(true){
 		std::string file_name = task_queue.pop();

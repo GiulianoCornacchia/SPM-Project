@@ -1,3 +1,17 @@
+/*
+*filename: util.cpp
+**
+*** Author: Mario Leonardo Salinas
+*** Student Code: 502795
+*** Master Degree curriculum: Data and Knowledge - Science and Technologies
+**      
+*/
+
+/*
+*   Library containing the definition of the blocking queue used 
+*	in the plain C++ implementation and all the other functions and procedures 
+*	used by almost all the implementations.
+**/
 #include <iostream>
 #include <mutex>
 #include <condition_variable>
@@ -31,9 +45,7 @@ class queue{
 	  std::deque<T>           d_queue;
 
 	public:
-
 	  queue(){}
-
 	  /*
 	  * Constructor overriding to manage non-movable mutex:
 	  *
@@ -42,7 +54,6 @@ class queue{
 	  queue(queue&& a)
 	    {
 	        std::unique_lock<std::mutex> lock(a.d_mutex);
-	        //d_condition = std::move(a.d_condition);
 	        d_queue = std::move(a.d_queue);
 	    }
 	  /*
@@ -53,7 +64,6 @@ class queue{
 	      if (this != &a)
 	      {
 	        std::unique_lock<std::mutex> lock(d_mutex, std::defer_lock);
-	        //d_condition = std::move(a.d_condition);
 	        d_queue = std::move(a.d_queue);
 	      }
 	      return *this;
@@ -61,24 +71,19 @@ class queue{
 	  /*
 	  * Copy Constructor
 	  */
-	  
 	  queue(const queue& a)
 	    {
 	        std::unique_lock<std::mutex> lock(a.d_mutex);
-	        //d_condition = a.d_condition;
 	        d_queue = a.d_queue;
 	    }
-	   
 	  /*
 	  * Copy Assignment 
 	  */
-	  
 	  queue& operator=(const queue& a)
 	    {
 	        if (this != &a)
 	        {
 	          std::unique_lock<std::mutex> lock(a.d_mutex, std::defer_lock);
-	          //d_condition = a.d_condition;
 	          d_queue = a.d_queue;
 	        }
 	        return *this;
@@ -110,7 +115,6 @@ bool to_bool(std::string str) {
 }
 
 void apply_watermark(bool avg, img_t &img, int c, int r){
-	//std::cout << avg << std::endl;
 	for(int ch = 0; ch < img.spectrum(); ch++)
 		if(avg)
 			img(c,r,0,ch) = img(c,r,0,ch)/(1.8);
@@ -206,7 +210,6 @@ void populate_task(
     	{
     		//std::cout << "Processing: " << s << "["<< i << "]" << std::endl;
 			std::string file_name(s);
-			//std::string result_name(path_out+s);
 			task_queue.push(file_name);
 			i++;
 	    }
@@ -233,7 +236,6 @@ void seq_wm(
     if (dir == NULL) {
         return;
     }
-    //int i = 0;
 	auto start = 0, elapsed = 0, msec = 0;
     while ((entry = readdir(dir)) != NULL /*&& i < nImgs*/) {
     	//std::cout << entry->d_name << " read." << std::endl;
@@ -241,7 +243,6 @@ void seq_wm(
     	if (s.compare(".") != 0
     		&& s.compare("..") != 0)
     	{
-    		//std::cout << "Processing: " << s << "["<< i << "]" << std::endl;
 			std::string file_name(path_in+s);
 			std::string result_name(path_out+s);
 
@@ -255,14 +256,12 @@ void seq_wm(
 	    	nImgs++;
 	    }
     }
-    //std::cout << "avgsSum: " << avg_load << ", " << avg_proc << ", " <<
-	//	avg_save << std::endl;
 	if(nImgs > 0){
 	    avg_proc /= nImgs;
 	    avg_save /= nImgs;
 	    avg_load /= nImgs;
-	    std::cout << "avgs[L, P, S]: " << avg_load << ", " << avg_proc << ", " <<
-			avg_save << std::endl;
+	    //std::cout << "avgs[L, P, S]: " << avg_load << ", " << avg_proc << ", " <<
+		//	avg_save << std::endl;
 	}
     closedir(dir);
 }
