@@ -8,9 +8,11 @@
 */
 
 /*
-*   Library containing the definition of the blocking queue used 
-*	in the plain C++ implementation and all the other functions and procedures 
-*	used by almost all the implementations.
+*   Library containing:
+*		a. the definition of the blocking queue used 
+*			in the plain C++ implementation
+*		b. all the other functions and procedures 
+*			used by all the implementations.
 **/
 #include <iostream>
 #include <mutex>

@@ -128,7 +128,7 @@ struct stage3: ff_node_t<std::pair<std::string, img_t*>> {
     }
 };
 /*
-*   This portion of code is the one used during the various test.
+*   This portion of code is the one used during the various tests.
 *   -------------------------
 *   Stage 1&2 merged.
 **/
@@ -146,6 +146,27 @@ struct stage12: ff_node_t<std::string, std::pair<std::string, img_t*>> {
         return p; 
     }
 };
+
+/*
+*   Function that applies a parallel watermark 
+*   using a Fastflow parallel for.
+**/
+void ff_process_image(
+    img_t &img, 
+    img_t watermark,
+    int chunk,
+    bool average
+    ){
+    ParallelFor pf(max_nw);
+    int width = img.width(),
+        height = img.height();
+    pf.parallel_for_idx(0,height,1, chunk, [&](const long start, const long stop, const long thid) {        for(long r=start;r<stop;r++)
+        for(int r = start; r < stop; r++)
+            for (int c = 0; c < width; c++)
+                if(watermark(c, r) < 50)
+                    apply_watermark(average, img, c, r);
+    });
+}
 
 /*
 *   Stage 1&2 merged and parallel for.
@@ -192,24 +213,3 @@ struct stage123: ff_node_t<std::string> {
         return task;
     }
 };
-
-/*
-*   Function that applies a parallel watermark 
-*   using a Fastflow parallel for.
-**/
-void ff_process_image(
-    img_t &img, 
-    img_t watermark,
-    int chunk,
-    bool average
-    ){
-    ParallelFor pf(max_nw);
-    int width = img.width(),
-        height = img.height();
-    pf.parallel_for_idx(0,height,1, chunk, [&](const long start, const long stop, const long thid) {        for(long r=start;r<stop;r++)
-        for(int r = start; r < stop; r++)
-            for (int c = 0; c < width; c++)
-                if(watermark(c, r) < 50)
-                    apply_watermark(average, img, c, r);
-    });
-}
