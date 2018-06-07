@@ -1,3 +1,16 @@
+/*
+*filename: seq_watermark.cpp
+**
+*** Author: Mario Leonardo Salinas
+*** Student Code: 502795
+*** Master Degree curriculum: Data and Knowledge - Science and Technologies
+**      
+*/
+
+/*
+*   C++ sequential implementation of a watermark application.
+*	Global variables and functions used are all defined in lib/util.cpp
+**/
 #include "./lib/util.cpp"
 
 int main(int argc, char * argv[]){
@@ -14,8 +27,9 @@ int main(int argc, char * argv[]){
 	std::string path_out = argv[2];
 	bool aVg = to_bool(argv[4]);
 	int nImgs = 0;
-	std::cerr << "seq_watermark\n";
 	float avg_load = 0.0, avg_proc = 0.0, avg_save = 0.0;
+
+	std::cerr << "seq_watermark\n";
 	auto start   = std::chrono::high_resolution_clock::now();
 	
     seq_wm(nImgs, path_in, path_out, watermark, aVg, avg_load, avg_proc, avg_save);

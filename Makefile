@@ -21,7 +21,7 @@ TARGETS		= seq_watermark      \
 	$(CXX) $(CXXFLAGS) $(INCLUDES) $(OPTFLAGS) -o $@ $< $(LDFLAGS)
 
 all		: $(TARGETS)
-	echo "\n---------------------------------\nSource files succesfully compiled.\n---------------------------------\n \nUsage is:\n./obj_file_name source_folder result_folder watermark_file [par_deg] avg\n \n*************************************************\n*** Images and watermark must have SAME SIZE. ***\n*************************************************";
+	printf "\n---------------------------------\nSource files succesfully compiled.\n---------------------------------\n \nUsage is:\n./obj_file_name source_folder result_folder watermark_file [par_deg] avg\n \n*************************************************\n*** Images and watermark must have SAME SIZE. ***\n*************************************************\n";
 clean		: 
 	rm -f $(TARGETS)
 cleanall	: clean
